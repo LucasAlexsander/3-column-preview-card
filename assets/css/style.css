@@ -1,0 +1,170 @@
+/*
+- Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+- Weights: 400
+
+- Family: [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders+Display)
+- Weights: 700
+### Body Copy
+
+- Font size: 15px
+
+# Front-end Style Guide
+
+## Layout
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+### Primary
+Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+### Neutral
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+* {
+    overflow-x: hidden;
+}
+:root {
+    /*PRIMARY COLORS*/
+    --primary-orange: hsl(31, 77%, 52%);
+    --primary-dark-cyan: hsl(184, 100%, 22%);
+    --primary-very-dark-cyan: hsl(179, 100%, 13%);
+    /*NEUTRAL*/
+    /*PARAGRAPHS*/
+    --neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+    /*BACKGROUND, HEADGINGS, BUTTONS*/
+    --neutral-very-light-gray: hsl(0, 0%, 95%);
+}
+body {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--neutral-very-light-gray);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lexend Deca';
+}
+img {
+    width: 75px;
+    height: auto;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Big Shoulders Display';
+}
+p {
+    max-width: 200px;
+    min-width: 185px;
+    margin-bottom: 115px;
+    line-height: 25px;
+}
+.button {
+    background-color: var(--neutral-very-light-gray);
+    color: black;
+    padding: 15px 35px;
+    display: inline-block;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    border: 2px solid var(--neutral-transparent-white);
+    cursor: pointer;
+}
+.button:hover {
+    background-color: unset;
+    color: var(--neutral-transparent-white);
+}
+
+.total-area {
+    width: 1100px;
+    height: auto;
+}
+.total-area .columns {
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--neutral-transparent-white);
+}
+
+.columns .sedans,
+.columns .suvs,
+.columns .luxury {
+    height: 500px;
+    padding: 50px;
+    min-width: 266px;
+}
+
+.sedans {    
+    background-color: var(--primary-orange);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.sedans .button {
+    color: var(--primary-orange);
+}
+.sedans .button:hover {
+    color: var(--neutral-transparent-white);
+}
+
+.suvs {
+    background-color: var(--primary-dark-cyan);
+}
+.suvs .button {
+    color: var(--primary-dark-cyan);
+}
+.suvs .button:hover {
+    color: var(--neutral-transparent-white);
+}
+
+.luxury {
+    background-color: var(--primary-very-dark-cyan);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.luxury .button {
+    color: var(--primary-very-dark-cyan);
+}
+.luxury .button:hover {
+    color: var(--neutral-transparent-white);
+}
+
+
+@media (max-width:1100px) {
+    .columns {
+        margin: 650px 20px 40px 20px;
+    }
+    .sedans {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .suvs {
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .luxury {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 15px;
+    }
+}
+@media (max-width: 771px) {
+    .total-area .columns {
+        margin: 950px 10px 40px 20px;
+    }
+    .sedans {
+        border-top-right-radius: 15px;
+    }
+    .suvs {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    
+}
